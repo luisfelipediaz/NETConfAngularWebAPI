@@ -1,0 +1,18 @@
+<div class="row justify-content-md-center">
+  <div class="col-sm-10 col-12" *ngIf="tasks$ | async as tasks; else loading">
+    <div class="row board">
+      <app-column class="col-4" name="TODO" [tasks]="tasks.TODO" (change)="reload()">
+        <app-new-task-button></app-new-task-button>
+      </app-column>
+      <app-column class="col-4" name="WIP" [tasks]="tasks.WIP" (change)="reload()"></app-column>
+      <app-column class="col-4" name="DONE" [tasks]="tasks.DONE" (change)="reload()"></app-column>
+    </div>
+  </div>
+  <ng-template #loading>
+    <app-column class="col-4" name="TODO">
+      <app-new-task-button></app-new-task-button>
+    </app-column>
+    <app-column class="col-4" name="WIP"></app-column>
+    <app-column class="col-4" name="DONE"></app-column>
+  </ng-template>
+</div>

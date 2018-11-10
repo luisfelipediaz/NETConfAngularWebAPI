@@ -1,0 +1,19 @@
+.row {
+    height: auto;
+
+    .justify-content-md-center {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
+.board {
+    border: 2px lightgray solid;
+    border-radius: 2px;
+}
+
+::content {
+    .col-4:not(:nth-child(3)) {
+        border-right: 2px solid gray;
+    }
+}
